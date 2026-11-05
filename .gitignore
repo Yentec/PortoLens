@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Generated code (e.g. Prisma client)
+generated/
+
+# Test and coverage reports
+coverage/
+playwright-report/
+test-results/
+
+# Environment files hold secrets: only templates are committed
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+
+# Personal financial data must never be committed.
+# Anonymised test fixtures are the only exception.
+*.xlsx
+*.xls
+*.ods
+*.csv
+*.ofx
+!**/fixtures/**
