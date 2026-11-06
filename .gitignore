@@ -28,6 +28,13 @@ npm-debug.log*
 Thumbs.db
 .idea/
 
+# Editors: only shared VS Code project files are committed
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/launch.json
+
 # Personal financial data must never be committed.
 # Anonymised test fixtures are the only exception.
 *.xlsx
