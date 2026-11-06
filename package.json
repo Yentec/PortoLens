@@ -1,6 +1,6 @@
 {
   "name": "portolens",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": true,
   "description": "Personal finance and wealth management SaaS (modular monolith).",
   "type": "module",
@@ -12,7 +12,12 @@
     "node": ">=26.0.0 <27.0.0",
     "npm": ">=11.0.0"
   },
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "devDependencies": {
+    "prettier": "3.9.10",
     "typescript": "6.0.3"
   }
 }

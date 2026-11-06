@@ -1,4 +1,14 @@
 {
+  // Format with Prettier on every save, using the repository configuration only.
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.requireConfig": true,
+
+  // Prettier does not handle Prisma schemas: use the Prisma extension for them.
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+
   // Use the TypeScript version installed in the repository (6.0.3),
   // not the one bundled with VS Code, so the editor and the CI agree.
   "js/ts.tsdk.path": "node_modules/typescript/lib",
@@ -18,7 +28,7 @@
   "explorer.fileNesting.patterns": {
     "package.json": "package-lock.json, .npmrc, .nvmrc",
     "tsconfig.json": "tsconfig.*.json",
-    ".gitignore": ".gitattributes, .editorconfig"
+    ".gitignore": ".gitattributes, .editorconfig, .prettierrc.json, .prettierignore"
   },
 
   "npm.packageManager": "npm"
