@@ -4,6 +4,11 @@
   "editor.formatOnSave": true,
   "prettier.requireConfig": true,
 
+  // Apply ESLint auto-fixes on explicit saves (Ctrl+S), not on auto-save.
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
   // Prettier does not handle Prisma schemas: use the Prisma extension for them.
   "[prisma]": {
     "editor.defaultFormatter": "Prisma.prisma"
