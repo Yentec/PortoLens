@@ -1,6 +1,6 @@
 {
   "name": "portolens",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": true,
   "description": "Personal finance and wealth management SaaS (modular monolith).",
   "type": "module",
@@ -16,7 +16,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
