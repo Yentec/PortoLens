@@ -22,5 +22,6 @@ Accepted ADRs are never rewritten: a changed decision gets a new ADR that supers
 | [0014](0014-internationalisation.md)                 | Internationalisation                       | Accepted |
 | [0015](0015-testing-strategy.md)                     | Testing strategy                           | Accepted |
 | [0016](0016-deferred-capabilities.md)                | Deferred capabilities                      | Accepted |
+| [0017](0017-erasable-syntax-scope.md)                | Scope of `erasableSyntaxOnly`              | Accepted |
 
 New ADRs start from [template.md](template.md).

@@ -1,24 +1,31 @@
 {
   "name": "@portolens/api",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "nest build",
     "dev": "nest start --watch",
     "start": "node dist/main.js",
-    "typecheck": "tsc --project tsconfig.json"
+    "typecheck": "tsc --project tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
-    "@nestjs/common": "12.4.0",
-    "@nestjs/core": "12.4.0",
-    "@nestjs/platform-express": "12.4.0",
+    "@nestjs/common": "12.4.2",
+    "@nestjs/core": "12.4.2",
+    "@nestjs/platform-express": "12.4.2",
     "reflect-metadata": "0.2.2",
     "rxjs": "7.8.2"
   },
   "devDependencies": {
     "@nestjs/cli": "12.0.12",
+    "@nestjs/testing": "12.4.2",
     "@types/express": "5.0.6",
-    "@types/node": "26.6.6"
+    "@types/node": "26.6.6",
+    "@types/supertest": "7.2.1",
+    "supertest": "7.3.2",
+    "vite": "8.3.7",
+    "vitest": "5.1.0"
   }
 }
