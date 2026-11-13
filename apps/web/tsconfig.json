@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.base.json",
+  // Browser application bundled by Vite: Vite resolves imports, TypeScript only type-checks.
+  "compilerOptions": {
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "types": ["vite/client"],
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts"]
+}

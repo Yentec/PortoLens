@@ -1,6 +1,6 @@
 {
   "name": "portolens",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": true,
   "description": "Personal finance and wealth management SaaS (modular monolith).",
   "type": "module",
@@ -18,11 +18,14 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "test": "npm run test --workspaces --if-present"
+    "test": "npm run test --workspaces --if-present",
+    "dev:api": "npm run dev -w @portolens/api",
+    "dev:web": "npm run dev -w @portolens/web"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "eslint": "10.14.0",
+    "eslint-plugin-react-hooks": "7.1.1",
     "prettier": "3.9.10",
     "typescript": "6.0.3",
     "typescript-eslint": "8.72.1"

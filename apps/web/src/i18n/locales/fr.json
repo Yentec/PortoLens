@@ -1,0 +1,15 @@
+{
+  "app": {
+    "title": "Portolens"
+  },
+  "health": {
+    "checking": "Vérification de l’API…",
+    "ok": "L’API est opérationnelle.",
+    "unreachable": "L’API est injoignable."
+  },
+  "language": {
+    "label": "Langue",
+    "en": "English",
+    "fr": "Français"
+  }
+}

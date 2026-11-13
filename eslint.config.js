@@ -1,6 +1,7 @@
 // @ts-check
 import js from '@eslint/js';
 import { defineConfig, globalIgnores } from 'eslint/config';
+import reactHooks from 'eslint-plugin-react-hooks';
 import tseslint from 'typescript-eslint';
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
@@ -50,6 +51,12 @@ export default defineConfig(
         },
       ],
     },
+  },
+
+  // React: rules of hooks (call order, dependencies) for the web app only.
+  {
+    files: ['apps/web/**/*.{ts,tsx}'],
+    extends: [reactHooks.configs.flat.recommended],
   },
 
   // Plain JavaScript files (configs) are not part of any tsconfig: no type-aware rules.
