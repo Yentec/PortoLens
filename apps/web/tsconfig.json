@@ -7,7 +7,16 @@
     "moduleResolution": "Bundler",
     "jsx": "react-jsx",
     "types": ["vite/client"],
-    "noEmit": true
+    "noEmit": true,
+    // Lets config files import "./vite.config.ts" with its extension, as Vite's
+    // native config loader (Node resolution) requires.
+    "allowImportingTsExtensions": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts"]
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts"
+  ]
 }
