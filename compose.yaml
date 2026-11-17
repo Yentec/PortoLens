@@ -1,0 +1,30 @@
+# Local development services. Production databases are managed (ADR 0016), never run from here.
+name: portolens
+
+services:
+  postgres:
+    # Debian-based image (not Alpine): same glibc collations as managed PostgreSQL hosts,
+    # so text sorting and lower() behave as in production. Minor version pinned on purpose.
+    image: postgres:18.7
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-portolens}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env (see .env.example)}
+      POSTGRES_DB: ${POSTGRES_DB:-portolens}
+      # Default connection settings for tools run inside the container (psql, pg_isready).
+      PGUSER: ${POSTGRES_USER:-portolens}
+      PGDATABASE: ${POSTGRES_DB:-portolens}
+    ports:
+      # Bound to localhost only: the database is never exposed to the local network.
+      - '127.0.0.1:${POSTGRES_PORT:-5432}:5432'
+    volumes:
+      # PostgreSQL 18+ images keep data in a versioned subdirectory of /var/lib/postgresql.
+      - postgres-data:/var/lib/postgresql
+    healthcheck:
+      test: ['CMD', 'pg_isready']
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+
+volumes:
+  postgres-data:

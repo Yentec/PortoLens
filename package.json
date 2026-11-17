@@ -1,6 +1,6 @@
 {
   "name": "portolens",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "private": true,
   "description": "Personal finance and wealth management SaaS (modular monolith).",
   "type": "module",
@@ -20,7 +20,11 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
     "dev:api": "npm run dev -w @portolens/api",
-    "dev:web": "npm run dev -w @portolens/web"
+    "dev:web": "npm run dev -w @portolens/web",
+    "db:up": "docker compose up --detach --wait",
+    "db:down": "docker compose down",
+    "db:logs": "docker compose logs --follow postgres",
+    "db:psql": "docker compose exec postgres psql"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
