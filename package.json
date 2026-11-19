@@ -1,6 +1,6 @@
 {
   "name": "portolens",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": true,
   "description": "Personal finance and wealth management SaaS (modular monolith).",
   "type": "module",
@@ -24,10 +24,12 @@
     "db:up": "docker compose up --detach --wait",
     "db:down": "docker compose down",
     "db:logs": "docker compose logs --follow postgres",
-    "db:psql": "docker compose exec postgres psql"
+    "db:psql": "docker compose exec postgres psql",
+    "lint:deps": "depcruise apps --config .dependency-cruiser.js"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
+    "dependency-cruiser": "18.8.0",
     "eslint": "10.14.0",
     "eslint-plugin-react-hooks": "7.1.1",
     "prettier": "3.9.10",
