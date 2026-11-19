@@ -1,0 +1,29 @@
+# Automated dependency updates (ADR 0013): one grouped pull request per ecosystem and week.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Paris
+    # Supply-chain safety: ignore releases younger than 7 days (time for a compromise to be caught).
+    cooldown:
+      default-days: 7
+    groups:
+      github-actions:
+        patterns: ['*']
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      timezone: Europe/Paris
+    cooldown:
+      default-days: 7
+    open-pull-requests-limit: 5
+    groups:
+      # Minor and patch updates together; each major version gets its own pull request.
+      npm-minor-and-patch:
+        update-types: [minor, patch]
