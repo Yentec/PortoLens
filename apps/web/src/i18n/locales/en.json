@@ -1,0 +1,15 @@
+{
+  "app": {
+    "title": "Portolens"
+  },
+  "health": {
+    "checking": "Checking the API…",
+    "ok": "The API is up and running.",
+    "unreachable": "The API cannot be reached."
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "fr": "Français"
+  }
+}

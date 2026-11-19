@@ -1,0 +1,40 @@
+{
+  // Format with Prettier on every save, using the repository configuration only.
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "prettier.requireConfig": true,
+
+  // Apply ESLint auto-fixes on explicit saves (Ctrl+S), not on auto-save.
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+
+  // Prettier does not handle Prisma schemas: use the Prisma extension for them.
+  "[prisma]": {
+    "editor.defaultFormatter": "Prisma.prisma"
+  },
+
+  // Use the TypeScript version installed in the repository (6.0.3),
+  // not the one bundled with VS Code, so the editor and the CI agree.
+  "js/ts.tsdk.path": "node_modules/typescript/lib",
+  "js/ts.tsdk.promptToUseWorkspaceVersion": true,
+
+  // Keep generated and heavy folders out of search results.
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/coverage": true,
+    "**/generated": true,
+    "**/package-lock.json": true
+  },
+
+  // Group related config files under their parent in the explorer.
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "package.json": "package-lock.json, .npmrc, .nvmrc",
+    "tsconfig.json": "tsconfig.*.json",
+    ".gitignore": ".gitattributes, .editorconfig, .prettierrc.json, .prettierignore"
+  },
+
+  "npm.packageManager": "npm"
+}

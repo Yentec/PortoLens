@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  // Editor, lint and type-check configuration: covers sources, tests and config files.
+  "compilerOptions": {
+    // Node.js native ES modules: relative imports must end with ".js"
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "types": ["node"],
+
+    // Required by NestJS dependency injection (decorators + constructor type metadata)
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    "outDir": "dist",
+    "noEmit": true,
+
+    // NestJS relies on legacy decorators, which Node's type stripping cannot run anyway,
+    // so erasable-only syntax brings no guarantee here and forbids idiomatic DI (ADR 0017).
+    "erasableSyntaxOnly": false
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
+}
